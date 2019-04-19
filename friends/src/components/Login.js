@@ -49,7 +49,6 @@ class Login extends Component {
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
-          {this.props.error && <p className="error-message">{this.props.error}</p>}
 
           <button>
             {this.props.isLoggedIn ? (
