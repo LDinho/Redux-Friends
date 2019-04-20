@@ -3,11 +3,9 @@ import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { getFriends } from '../actions';
+import Friend from './Friend';
 
 class Friends extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this.props.getFriends();
@@ -17,7 +15,6 @@ class Friends extends Component {
   render() {
     return (
       <section className="friends-list">
-
         <Link to="/">
           <div className="button-home">
             Home
@@ -30,12 +27,14 @@ class Friends extends Component {
           </div>
         </Link>
 
-        {this.props.friends.map( (friend) => {
-            return (
-              <div> { friend.name }</div>
-            )
-          })
-        }
+        <ul>
+          {this.props.friends.map( (friend) => {
+              return (
+                  <Friend key={friend.id} friend={friend}/>
+              )
+            })
+          }
+        </ul>
       </section>
     )
   }

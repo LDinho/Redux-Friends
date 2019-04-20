@@ -22,8 +22,9 @@ class App extends Component {
         </header>
 
         <Route path="/login" component={ Login } />
-        <PrivateRoute exact path="/protected" component={Friends} />
-
+        <PrivateRoute exact path="/friends"
+                      component={Friends}
+        />
       </div>
     );
   }

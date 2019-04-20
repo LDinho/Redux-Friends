@@ -26,7 +26,7 @@ class Login extends Component {
     event.preventDefault();
     this.props
       .login(this.state.credentials)
-      .then(() => this.props.history.push('/protected'));
+      .then(() => this.props.history.push('/friends'));
   };
 
   render() {

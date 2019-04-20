@@ -27,7 +27,6 @@ export default (state = initialState, action) => {
         token: action.payload
       };
     case FETCH_FRIENDS:
-      console.log('STATE', state)
       return {
         ...state,
         fetchingFriends: true,
